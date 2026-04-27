@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Kuhu! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .card {
+            width: 90%;
+            max-width: 640px;
+            height: 400px;
+            position: relative;
+            margin: auto;
+            perspective: 1200px;
+            transition: 1s;
+        }
+        .card:hover {
+            transform: rotateY(-5deg);
+        }
+        .card:hover .outside {
+            transform: rotateY(-130deg);
+        }
+        .outside, .inside {
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            left: 50.1%;
+        }
+        .inside {
+            background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+            line-height: 3;
+            padding: 0 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            left: 50%;
+            border-radius: 0 20px 20px 0;
+        }
+        .outside {
+            transform-style: preserve-3d;
+            z-index: 1;
+            transform-origin: left;
+            transition: 2s;
+            cursor: pointer;
+        }
+        .front, .back {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 20px 0 0 20px;
+        }
+        .front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .back {
+            transform: rotateY(180deg);
+            background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+        }
+        .cake {
+            width: 80%;
+            max-width: 240px;
+            position: absolute;
+            bottom: 30px;
+        }
+        .top-layer, .middle-layer, .bottom-layer {
+            height: 80px;
+            width: 100%;
+            background: linear-gradient(transparent 50px, #fedbab 50px, #fedbab 60px, transparent 60px),
+                        radial-gradient(circle at 25% 5px, #994c10 15px, #fcbf29 16px);
+            background-size: cover;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            margin: auto;
+        }
+        .middle-layer {
+            transform: scale(0.85);
+            top: 6px;
+        }
+        .top-layer {
+            transform: scale(0.7);
+            top: 26px;
+        }
+        .candle {
+            height: 45px;
+            width: 15px;
+            background: repeating-linear-gradient(45deg, #fd3018 0, #fd3018 5px, #ffa89e 5px, #ffa89e 10px);
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 200px;
+            border-radius: 2px;
+        }
+        .candle::before {
+            content: "";
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            background-color: #ffa500;
+            border-radius: 50%;
+            bottom: 48px;
+            left: -1px;
+            box-shadow: 0 0 10px #ffa500;
+        }
+        .front h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        .front p {
+            font-size: 1.2em;
+        }
+        .inside h2 {
+            color: #333;
+            font-size: 1.8em;
+        }
+        .inside p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .inside .emoji {
+            font-size: 5em;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .card {
+                width: 95%;
+                height: 350px;
+            }
+            .front h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="outside">
+            <div class="front">
+                <h1>Happy Birthday!</h1>
+                <p>Dear Younger Sister</p>
+                <div class="cake">
+                    <div class="top-layer"></div>
+                    <div class="middle-layer"></div>
+                    <div class="bottom-layer"></div>
+                    <div class="candle"></div>
+                </div>
+            </div>
+            <div class="back"></div>
+        </div>
+        <div class="inside">
+            <h2>Happy Birthday, Kuhu! 🎂</h2>
+            <p>Wishing you a day filled with love, laughter, and endless joy. You're the best sister ever!</p>
+            <p>May all your dreams come true. Love, Kutun Dada ❤️</p>
+            <div class="emoji">🎁🎈🎉</div>
+        </div>
+    </div>
+</body>
+</html>
